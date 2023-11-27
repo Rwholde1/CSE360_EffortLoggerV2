@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LogScreenController">
+   <children>
+      <Label layoutX="223.0" layoutY="36.0" text="Effort and Defect Logs">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ScrollPane hbarPolicy="NEVER" layoutX="23.0" layoutY="125.0" prefHeight="349.0" prefWidth="248.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="348.0" prefWidth="247.0">
+               <children>
+                  <ListView fx:id="projectListView" prefHeight="350.0" prefWidth="248.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <TextArea fx:id="effortLogView" editable="false" layoutX="284.0" layoutY="144.0" prefHeight="148.0" prefWidth="454.0" />
+      <Label layoutX="284.0" layoutY="125.0" text="Effort Logs:" />
+      <TextArea fx:id="defectLogView" editable="false" layoutX="284.0" layoutY="319.0" prefHeight="156.0" prefWidth="454.0" />
+      <Label layoutX="284.0" layoutY="300.0" text="Defect Logs:" />
+      <Label layoutX="126.0" layoutY="107.0" text="Projects" />
+      <Button fx:id="goEffortLogConsoleButton" layoutX="23.0" layoutY="547.0" mnemonicParsing="false" onAction="#goEffortLogConsole" text="Effort Log Console" />
+   </children>
+</AnchorPane>

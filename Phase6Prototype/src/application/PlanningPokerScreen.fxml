@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PlanningPokerController">
+   <children>
+      <Label layoutX="320.0" layoutY="14.0" text="Planning Poker">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="75.0" text="Keywords:" />
+      <TextField fx:id="KeywordsField" layoutX="74.0" layoutY="71.0" prefHeight="25.0" prefWidth="559.0" />
+      <Button fx:id="SearchDatabase" layoutX="641.0" layoutY="71.0" mnemonicParsing="false" text="Search Database" />
+      <Label layoutX="74.0" layoutY="49.0" text="Enter Keywords (Keyword 1 | Keyword 2 | ... | Keyword n)" />
+      <Label fx:id="KeywordIncorrectFormat" layoutX="479.0" layoutY="49.0" text="Incorrect Format" textFill="RED" visible="false" />
+      <ScrollPane hbarPolicy="NEVER" layoutX="20.0" layoutY="135.0" prefHeight="404.0" prefWidth="380.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="404.0" prefWidth="380.0">
+               <children>
+                  <ListView fx:id="RelevantUserStoryList" prefHeight="404.0" prefWidth="380.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Label layoutX="143.0" layoutY="110.0" text="Revelant User Stories" />
+      <Button fx:id="ToEffortConsole" layoutX="41.0" layoutY="553.0" mnemonicParsing="false" onAction="#GoToEffortConsole" text="Effort Log Console" />
+      <Button fx:id="ToDefinitions" layoutX="240.0" layoutY="553.0" mnemonicParsing="false" onAction="#goToDefinitions" text="Project Definitions" />
+      <TextArea fx:id="InfoBox" editable="false" layoutX="415.0" layoutY="135.0" prefHeight="124.0" prefWidth="368.0" />
+      <TextField fx:id="SelectedUserStoriesAVG" editable="false" layoutX="418.0" layoutY="300.0" prefHeight="25.0" prefWidth="368.0" />
+      <Label layoutX="417.0" layoutY="271.0" text="User Story Indices for Averaged (# | # | ... | #)" />
+      <Button fx:id="EEAvg" layoutX="417.0" layoutY="334.0" mnemonicParsing="false" onAction="#ComputeEEAVG" text="Estimated Effort Point Average" />
+      <Button fx:id="AEAvg" layoutX="612.0" layoutY="334.0" mnemonicParsing="false" onAction="#ComputeAEAVG" text="Actual Effort Point Average" />
+      <Label fx:id="ComputedAvg" layoutX="443.0" layoutY="386.0" text="Average: " />
+      <Label fx:id="AvgIndicesIncorrectFormat" layoutX="684.0" layoutY="271.0" text="Incorrect Format" textFill="RED" visible="false" />
+      <Label layoutX="606.0" layoutY="386.0" text="Effort Estimation:" />
+      <TextField fx:id="EEField" layoutX="703.0" layoutY="382.0" prefHeight="25.0" prefWidth="49.0" />
+      <Label layoutX="409.0" layoutY="419.0" text="Project Name:" />
+      <TextField fx:id="ProjectNameField" layoutX="492.0" layoutY="415.0" prefHeight="25.0" prefWidth="296.0" />
+      <Button fx:id="ClearScreen" layoutX="428.0" layoutY="553.0" mnemonicParsing="false" onAction="#resetForNextRound" text="Clear for Next Round" />
+      <Button fx:id="SaveProject" layoutX="630.0" layoutY="553.0" mnemonicParsing="false" onAction="#createNewProject" text="Save New Project" />
+      <Label layoutX="409.0" layoutY="479.0" text="Project Description: " />
+      <TextArea fx:id="ProjectDescArea" layoutX="516.0" layoutY="449.0" prefHeight="77.0" prefWidth="271.0" />
+      <Button fx:id="UserStoryInfo" layoutX="417.0" layoutY="106.0" mnemonicParsing="false" text="User Story Info" />
+      <Button fx:id="EffortLogInfo" layoutX="568.0" layoutY="106.0" mnemonicParsing="false" onAction="#seeEffortLogs" text="Effort Logs" />
+      <Button fx:id="DefectLogInfo" layoutX="705.0" layoutY="106.0" mnemonicParsing="false" onAction="#seeDefectLogs" text="Defect Logs" />
+      <Label fx:id="ProjectFormatError" layoutX="517.0" layoutY="526.0" text="Effort Estimation must be a Planning Poker Integer" textFill="RED" visible="false" />
+   </children>
+</AnchorPane>

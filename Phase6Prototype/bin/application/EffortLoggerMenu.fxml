@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EffortLoggerConsoleController">
+   <children>
+      <ComboBox fx:id="projectButton" layoutX="158.0" layoutY="266.0" onAction="#updateAttributes" prefHeight="26.0" prefWidth="208.0" />
+      <Label layoutX="218.0" layoutY="47.0" text="Effort Logger Console">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="startButton" layoutX="201.0" layoutY="201.0" mnemonicParsing="false" onAction="#startActivity" text="Start an Activity" />
+      <Label layoutX="158.0" layoutY="248.0" text="Project:" />
+      <Label layoutX="400.0" layoutY="248.0" text="Life Cycle Step:" />
+      <ComboBox fx:id="lifeCycleStepButton" layoutX="400.0" layoutY="267.0" prefHeight="26.0" prefWidth="208.0" />
+      <Label layoutX="159.0" layoutY="326.0" text="Effort Category:" />
+      <ComboBox fx:id="effortCategoryButton" layoutX="158.0" layoutY="344.0" onAction="#changeSubEffortCategory" prefWidth="150.0" />
+      <ComboBox fx:id="subEffortCategoryButton" layoutX="325.0" layoutY="344.0" prefHeight="26.0" prefWidth="286.0" />
+      <Button fx:id="stopButton" layoutX="198.0" layoutY="403.0" mnemonicParsing="false" onAction="#stopActivity" text="Stop this Activity" />
+      <Button fx:id="effortLogEditorButton" layoutX="114.0" layoutY="548.0" mnemonicParsing="false" onAction="#goEffortLogEditor" text="Effort Log Editor" />
+      <Button fx:id="DefectConsoleBtn" layoutX="225.0" layoutY="548.0" mnemonicParsing="false" onAction="#ChangeToDefectConsole" text="Defect Log Console" />
+      <Button fx:id="DefinitionsBtn" layoutX="355.0" layoutY="548.0" mnemonicParsing="false" onAction="#GoToDefinitions" text="Definitions" />
+      <Button fx:id="logScreenButton" layoutX="442.0" layoutY="548.0" mnemonicParsing="false" onAction="#goLogScreen" text="Effort and Defect Logs" />
+      <Button fx:id="planningPokerButton" layoutX="590.0" layoutY="548.0" mnemonicParsing="false" onAction="#goPlanningPoker" text="Planning Poker" />
+      <Label fx:id="timerNotRunningLabel" layoutX="340.0" layoutY="130.0" text="CLOCK IS STOPPED" textFill="#ef0000" />
+      <Label fx:id="subEffortCategoryLabel" layoutX="326.0" layoutY="326.0" />
+      <Label fx:id="timerRunningLabel" layoutX="338.0" layoutY="163.0" textFill="#00ff1a" />
+      <Label fx:id="timeStopped" layoutX="331.0" layoutY="407.0" />
+      <Label fx:id="timeStarted" layoutX="326.0" layoutY="205.0" />
+   </children>
+</AnchorPane>
