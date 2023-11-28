@@ -1,6 +1,5 @@
 package application;
 
-
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -134,6 +133,7 @@ public class EffortLoggerEditorController implements Initializable{
     	
     }
     
+    // clears all of the effort logs associated with a project
     @FXML
     void clearProjectEffortLogs(ActionEvent event) throws SQLException, IOException {
     	try (
